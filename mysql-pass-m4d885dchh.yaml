@@ -3,5 +3,5 @@ data:
   password: c2VjcmV0
 kind: Secret
 metadata:
-  name: mysql-pass-m4d885dchh
+  name: mysql-pass
 type: Opaque
