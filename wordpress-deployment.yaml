@@ -31,11 +31,11 @@ spec:
         volumeMounts:
         - name: wordpress-persistent-storage
           mountPath: /var/www/html
-      - image: nginx:1.21-alpine
+      - image: nginx:1.20.2
         name: nginx
         volumeMounts:
         - name: nginx-config
-          mountPath: /etc/config
+          mountPath: /etc/nginx/conf.d/wp.conf
         ports:
         - containerPort: 80
           name: wordpress
@@ -45,4 +45,4 @@ spec:
           claimName: wp-pv-claim
       - name: nginx-config
         configMap:
-          name: special-config
+          name: nginx-config
