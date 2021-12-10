@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: game-demo
+  name: nginx-config
 data:
   wp.conf: |-
     # Upstream to abstract backend connection(s) for php
