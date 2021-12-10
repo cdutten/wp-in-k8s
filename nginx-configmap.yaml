@@ -4,12 +4,6 @@ metadata:
   name: nginx-config
 data:
   wp.conf: |-
-    # Upstream to abstract backend connection(s) for php
-    upstream php {
-        server unix:/tmp/php-cgi.socket;
-        server 127.0.0.1:9000;
-    }
-
     server {
             ## Your website name goes here.
             server_name wp.local;
@@ -39,7 +33,7 @@ data:
                     #NOTE: You should have "cgi.fix_pathinfo = 0;" in php.ini
                     include fastcgi_params;
                     fastcgi_intercept_errors on;
-                    fastcgi_pass php;
+                    fastcgi_pass 127.0.0.1:9000;
                     #The following parameter can be also included in fastcgi_params file
                     fastcgi_param  SCRIPT_FILENAME $document_root$fastcgi_script_name;
             }
