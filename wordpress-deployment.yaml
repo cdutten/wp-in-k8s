@@ -8,14 +8,12 @@ spec:
   selector:
     matchLabels:
       app: wordpress
-      tier: frontend
   strategy:
     type: Recreate
   template:
     metadata:
       labels:
         app: wordpress
-        tier: frontend
     spec:
       containers:
       - image: wordpress:php7.3-fpm
