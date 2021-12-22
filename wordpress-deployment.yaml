@@ -16,7 +16,7 @@ spec:
         app: wordpress
     spec:
       containers:
-      - image: wordpress:php7.3-fpm
+      - image: wordpress:php7.4-fpm
         name: wordpress
         env:
         - name: WORDPRESS_DB_HOST
