@@ -21,6 +21,8 @@ spec:
         volumeMounts:
         - name: nginx-config
           mountPath: /etc/nginx/conf.d
+        - name: wordpress-persistent-storage
+          mountPath: /var/www/html
         ports:
         - containerPort: 80
           name: nginx
@@ -28,3 +30,6 @@ spec:
       - name: nginx-config
         configMap:
           name: nginx-config
+      - name: wordpress-persistent-storage
+        persistentVolumeClaim:
+          claimName: wp-pv-claim
